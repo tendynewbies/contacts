@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<page:ViewPage xmlns="http://xamarin.com/schemas/2014/forms"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               x:Class="Contacts.Views.MyContacts.ContactsListPage"
+               xmlns:page="clr-namespace:Contacts.Views"
+               xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+               ios:Page.UseSafeArea="true"
+               Title="{Binding Title.Value}"
+               BackgroundColor="White">
+    <page:ViewPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            
+        </StackLayout>
+    </page:ViewPage.Content>
+</page:ViewPage>
