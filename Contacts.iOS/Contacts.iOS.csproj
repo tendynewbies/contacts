@@ -122,6 +122,10 @@
     <BundleResource Include="Resources\Hamburger_Menu.png" />
     <BundleResource Include="Resources\Hamburger_Menu%402x.png" />
     <BundleResource Include="Resources\Hamburger_Menu%403x.png" />
+    <BundleResource Include="Resources\ic_add.png" />
+    <BundleResource Include="Resources\ic_add%404x.png" />
+    <BundleResource Include="Resources\ic_add%402x.png" />
+    <BundleResource Include="Resources\ic_add%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

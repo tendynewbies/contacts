@@ -8,8 +8,18 @@
                Title="{Binding Title.Value}"
                BackgroundColor="White">
     <page:ViewPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand">
-            
-        </StackLayout>
+        <Grid VerticalOptions="FillAndExpand"
+              HorizontalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand"
+                         Grid.Row="0"
+                         Grid.Column="0">
+
+            </StackLayout>
+            <Image VerticalOptions="End" HorizontalOptions="End" Grid.Row="0" Grid.Column="0" Source="ic_add.png" Margin="25">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AddContactCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
     </page:ViewPage.Content>
 </page:ViewPage>
