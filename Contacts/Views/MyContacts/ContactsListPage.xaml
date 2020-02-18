@@ -23,7 +23,8 @@
                           Grid.Row="0"
                           Grid.Column="0"
                           VerticalOptions="FillAndExpand"
-                          HorizontalOptions="FillAndExpand">
+                          HorizontalOptions="FillAndExpand"
+                          ItemSelected="OnContactSelected">
 
                     <ListView.ItemTemplate>
                         <DataTemplate>

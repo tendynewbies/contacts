@@ -15,7 +15,8 @@
                       HasUnevenRows="True"
                       IsVisible="{Binding HasData.Value}"
                       VerticalOptions="FillAndExpand"
-                      HorizontalOptions="FillAndExpand">
+                      HorizontalOptions="FillAndExpand"
+                      ItemSelected="OnContactSelected">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>

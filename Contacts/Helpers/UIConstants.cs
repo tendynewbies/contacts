@@ -5,6 +5,7 @@
         public const string ContactList = "Contact List";
         public const string FavoriteContacts = "Favorite Contacts";
         public const string AddContact = "Add New Contact";
+        public const string UpdateContact = "Update Contact";
 
         public const string Favorite = nameof(Favorite);
         public const string UnFavorite = nameof(UnFavorite);

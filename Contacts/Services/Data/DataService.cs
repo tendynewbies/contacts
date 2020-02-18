@@ -35,5 +35,15 @@ namespace Contacts.Services.Data
             var favoriteContactList = await dbService.GetItemsbyQuery<MyContact>(contact => contact.IsFavourite == true);
             return favoriteContactList.OrderBy(contact => contact.Name.ToUpper()).ToList();
         }
+
+        public async Task<int> UpdateContact(MyContact contact)
+        {
+            return await dbService.UpdateItem(contact);
+        }
+
+        public async Task<int> DeleteContact(MyContact contact)
+        {
+            return await dbService.DeleteItem(contact);
+        }
     }
 }

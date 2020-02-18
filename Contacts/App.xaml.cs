@@ -1,5 +1,4 @@
-﻿using Contacts.Services;
-using Contacts.Services.Data;
+﻿using Contacts.Services.Data;
 using Contacts.Services.Database;
 using Contacts.Views.Home;
 using Xamarin.Forms;
@@ -12,7 +11,6 @@ namespace Contacts
         public App()
         {
             InitializeComponent();
-            DependencyService.Register<MockDataStore>();
             DependencyService.Register<DataService>();
             DependencyService.Register<DatabaseService>();
             MainPage = new HamburgerMenuPage();
