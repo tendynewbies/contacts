@@ -23,7 +23,7 @@ namespace Contacts.Views.Home
                 switch (menuItem.Id)
                 {
                     case MenuItemType.ContactList:
-                        MenuPages.Add(menuItem.Id, new NavigationPage(new ItemsPage()));
+                        MenuPages.Add(menuItem.Id, new NavigationPage(new ContactsListPage()));
                         break;
                     case MenuItemType.FavoriteContacts:
                         MenuPages.Add(menuItem.Id, new NavigationPage(new FavoriteContactsPage()));

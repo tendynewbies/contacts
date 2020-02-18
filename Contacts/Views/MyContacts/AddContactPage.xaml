@@ -3,13 +3,68 @@
                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                x:Class="Contacts.Views.MyContacts.AddContactPage"
                xmlns:page="clr-namespace:Contacts.Views"
-               xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+               xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+               xmlns:circleImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
                ios:Page.UseSafeArea="true"
                Title="{Binding Title.Value}"
                BackgroundColor="White">
     <page:ViewPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand">
-            
-        </StackLayout>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" Padding="20">
+                <circleImage:CircleImage HorizontalOptions="CenterAndExpand"
+                                         BorderColor="Gray"
+                                         BorderThickness="1"
+                                         HeightRequest="120"
+                                         WidthRequest="120"
+                                         Aspect="AspectFill"
+                                         Source="{Binding ProfilePic.Value}"/>
+                <Button HorizontalOptions="FillAndExpand"
+                        Text="Update Photo"
+                        TextColor="White"
+                        BackgroundColor="#00589d"
+                        Margin="20"
+                        Command="{Binding UpdatePhotoCommand}"></Button>
+
+
+                <Grid RowSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Name" TextColor="#888888" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                    <Entry Text="{Binding Name.Value}" TextColor="#aaaaaa" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" MaxLength="40"/>
+
+                    <Label Text="Mobile" TextColor="#888888" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
+                    <Entry Text="{Binding Mobile.Value}" TextColor="#aaaaaa" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" Keyboard="Telephone" MaxLength="15"/>
+
+                    <Label Text="Landline" TextColor="#888888" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
+                    <Entry Text="{Binding Landline.Value}" TextColor="#aaaaaa" Grid.Row="2" Grid.Column="1" VerticalOptions="Center" Keyboard="Telephone" MaxLength="15"/>
+                </Grid>
+
+                <Grid Margin="0, 20" ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button HorizontalOptions="FillAndExpand"
+                            Text="{Binding IsFavorite.Value}"
+                            TextColor="White"
+                            BackgroundColor="#00589d"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Command="{Binding MarkFavoriteCommand}"></Button>
+                    <Button HorizontalOptions="FillAndExpand"
+                            Text="Save"
+                            TextColor="White"
+                            BackgroundColor="#00589d"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Command="{Binding SaveCommand}"></Button>
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
     </page:ViewPage.Content>
 </page:ViewPage>

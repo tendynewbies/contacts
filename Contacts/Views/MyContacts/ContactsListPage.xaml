@@ -5,21 +5,64 @@
                xmlns:page="clr-namespace:Contacts.Views"
                xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
                ios:Page.UseSafeArea="true"
+               xmlns:circleImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
                Title="{Binding Title.Value}"
                BackgroundColor="White">
     <page:ViewPage.Content>
         <Grid VerticalOptions="FillAndExpand"
               HorizontalOptions="FillAndExpand">
+
+            <!--Start Data Stack-->
             <StackLayout VerticalOptions="FillAndExpand"
                          Grid.Row="0"
-                         Grid.Column="0">
+                         Grid.Column="0"
+                         IsVisible="{Binding HasData.Value}">
+                <ListView SeparatorColor="DarkGray"
+                          ItemsSource="{Binding ContactList.Value}"
+                          HasUnevenRows="True"
+                          Grid.Row="0"
+                          Grid.Column="0"
+                          VerticalOptions="FillAndExpand"
+                          HorizontalOptions="FillAndExpand">
 
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout HorizontalOptions="FillAndExpand"
+                                             Orientation="Horizontal"
+                                             Padding="20, 10, 10, 10">
+
+                                    <circleImage:CircleImage VerticalOptions="CenterAndExpand"
+                                                             BorderColor="Gray"
+                                                             BorderThickness="1"
+                                                             HeightRequest="60"
+                                                             WidthRequest="60"
+                                                             Aspect="AspectFill"
+                                                             Source="{Binding ProfilePic}"/>
+
+                                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical" Padding="20,0,0,0">
+
+                                        <Label Text="{Binding Name}" FontSize="Small" FontAttributes="Bold"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Mobile: " FontSize="Small"/>
+                                            <Label Text="{Binding Mobile}" FontSize="Small"/>
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
+            <!--End Data Stack-->
+
             <Image VerticalOptions="End" HorizontalOptions="End" Grid.Row="0" Grid.Column="0" Source="ic_add.png" Margin="25">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding AddContactCommand}"/>
                 </Image.GestureRecognizers>
             </Image>
+
         </Grid>
     </page:ViewPage.Content>
 </page:ViewPage>

@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Contacts.Helpers;
 using Contacts.Models;
-using Contacts.Views.Home;
 using Reactive.Bindings;
-using Xamarin.Forms;
 
 namespace Contacts.ViewModels.Menu
 {
@@ -13,7 +11,6 @@ namespace Contacts.ViewModels.Menu
     {
         public List<HomeMenuItem> MenuItems { get; set; }
         public ReactiveCommand<HomeMenuItem> SelectMenuItemCommand { get; set; } = new ReactiveCommand<HomeMenuItem>();
-        private HamburgerMenuPage RootPage { get => Application.Current.MainPage as HamburgerMenuPage; }
 
         public MenuPageViewModel()
         {

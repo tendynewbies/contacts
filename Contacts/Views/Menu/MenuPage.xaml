@@ -11,8 +11,8 @@
              xmlns:repeater="clr-namespace:Xamarin.CustomControls;assembly=Xamarin.CustomControls.RepeaterView">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
-            <StackLayout HorizontalOptions="FillAndExpand" Padding="0, 10">
-                <Label TextColor="#2196F3" Text="Welcome" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold"/>
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="0, 10, 0, 30">
+                <Label TextColor="#2196F3" Text="Contacts" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold"/>
             </StackLayout>
             <repeater:RepeaterView Spacing="0"
                                    HorizontalOptions="FillAndExpand"
@@ -20,8 +20,8 @@
                                    SelectedItemCommand="{Binding SelectMenuItemCommand}">
                 <repeater:RepeaterView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout HorizontalOptions="FillAndExpand" Padding="20, 10">
-                            <Label TextColor="Black" Text="{Binding Title}" FontSize="Large"/>
+                        <StackLayout HorizontalOptions="FillAndExpand" Padding="20">
+                            <Label TextColor="Black" Text="{Binding Title}" FontSize="Medium"/>
                             <BoxView HeightRequest="1" BackgroundColor="Gray"/>
                         </StackLayout>
                     </DataTemplate>

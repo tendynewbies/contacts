@@ -1,5 +1,6 @@
 ﻿using Contacts.Services;
-using Contacts.Views;
+using Contacts.Services.Data;
+using Contacts.Services.Database;
 using Contacts.Views.Home;
 using Xamarin.Forms;
 
@@ -12,7 +13,15 @@ namespace Contacts
         {
             InitializeComponent();
             DependencyService.Register<MockDataStore>();
+            DependencyService.Register<DataService>();
+            DependencyService.Register<DatabaseService>();
             MainPage = new HamburgerMenuPage();
+        }
+
+        protected override async void OnStart()
+        {
+            base.OnStart();
+            await DependencyService.Get<IDatabaseService>().CreateTables();
         }
     }
 }

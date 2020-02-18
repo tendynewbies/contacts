@@ -6,10 +6,46 @@
                xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
                ios:Page.UseSafeArea="true"
                Title="{Binding Title.Value}"
+               xmlns:circleImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
                BackgroundColor="White">
     <page:ViewPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
-            
+            <ListView SeparatorColor="DarkGray"
+                      ItemsSource="{Binding FavoriteContactList.Value}"
+                      HasUnevenRows="True"
+                      IsVisible="{Binding HasData.Value}"
+                      VerticalOptions="FillAndExpand"
+                      HorizontalOptions="FillAndExpand">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="FillAndExpand"
+                                             Orientation="Horizontal"
+                                             Padding="20, 10, 10, 10">
+
+                                <circleImage:CircleImage VerticalOptions="CenterAndExpand"
+                                                             BorderColor="Gray"
+                                                             BorderThickness="1"
+                                                             HeightRequest="60"
+                                                             WidthRequest="60"
+                                                             Aspect="AspectFill"
+                                                             Source="{Binding ProfilePic}"/>
+
+                                <StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical" Padding="20,0,0,0">
+
+                                    <Label Text="{Binding Name}" FontSize="Small" FontAttributes="Bold"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Mobile: " FontSize="Small"/>
+                                        <Label Text="{Binding Mobile}" FontSize="Small"/>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </page:ViewPage.Content>
 </page:ViewPage>
