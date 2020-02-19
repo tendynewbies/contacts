@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Contacts</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.nagarro.Contacts</string>
+	<string>trendy.newbies.Contacts</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
